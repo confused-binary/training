@@ -1,0 +1,5 @@
+go 1.21.6
+
+use ./golang/001_vscode_setup
+use ./golang/002_hello_world
+use ./golang/003_variables
