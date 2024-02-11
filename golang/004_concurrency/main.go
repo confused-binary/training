@@ -25,6 +25,21 @@ func sum(s []int, c chan int) {
 	c <- sum
 }
 
+func fibonacci(n int, c chan int) {
+	x, y := 0, 1
+	for i := 0; i < n; i++ {
+		c <- x
+		x, y = y, x+y
+	}
+	close(c)
+}
+
+type Tree struct {
+	Left  *Tree
+	Value int
+	Right *Tree
+}
+
 // practice to get a better grasp on golang concurrency
 // .... at least that's the hope
 func main() {
@@ -59,6 +74,23 @@ func main() {
 	ch <- 2
 	fmt.Println(<-ch)
 	fmt.Println(<-ch)
+
+	// If needed, channels can be closed, which can be useful
+	// if the channel is going to be iterated over as a range
+	// Otherwise the channel will deadlock when it can't add more
+	// data values than the configured buffer
+	// https://go.dev/tour/concurrency/4
+	cha := make(chan int, 10)
+	go fibonacci(cap(cha), cha)
+	for i := range cha {
+		fmt.Println(i)
+	}
+
+	// Select statement lets a goroutine wait on multiple communication operations.
+	// This is useful for 'case' evaluations
+	// https://go.dev/tour/concurrency/5
+	// The 'default' case can be used so that the go routine doesn't stall
+	// https://go.dev/tour/concurrency/6
 
 	fmt.Println("That's it!")
 }
