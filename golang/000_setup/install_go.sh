@@ -2,6 +2,10 @@ if [[ "$(whoami)" != "root" ]]; then
         echo "run me with sudo"
         exit 1
 fi
+if [[ ! "$(which jq)" ]]; then
+        echo "JQ is needed. Install and run again."
+        exit 1
+fi
 
 echo "Checking for old installs from other sources..."
 echo "These can mess up calling go or using features in newer versions..."

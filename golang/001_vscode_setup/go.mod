@@ -1,6 +1,6 @@
 module github.com/confused-binary/training/golang/001_vscode_setup
 
-go 1.21.6
+go 1.22.0
 
 require rsc.io/quote v1.5.2
 
