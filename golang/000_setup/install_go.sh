@@ -7,6 +7,11 @@ if [[ ! "$(which jq)" ]]; then
         exit 1
 fi
 
+if [[ ! $(which jq) ]]; then
+	echo "jq is needed"
+	exit 1
+fi
+
 echo "Checking for old installs from other sources..."
 echo "These can mess up calling go or using features in newer versions..."
 if [[ "$(dpkg --list | grep "golang-[0-9].[0-9]" | grep "^ll" | wc -l)" -gt "1" ]]; then

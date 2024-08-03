@@ -3,6 +3,12 @@ go 1.22.0
 use ./golang/001_vscode_setup
 use ./golang/002_hello_world
 use ./golang/003_variables
+<<<<<<< HEAD
 use ./golang/004_json
 use ./golang/project_001-simple_cli_arguments
 use ./golang/project_002-cli_arguments_flags
+=======
+use ./golang/004_concurrency
+use ./golang/005_waitgroups
+use ./golang/006_workerpools
+>>>>>>> refs/remotes/origin/main
