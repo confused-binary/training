@@ -1,0 +1,17 @@
+# Nmap 7.94SVN scan initiated Thu Aug  1 22:09:42 2024 as: nmap -v -sV -A -oA 54.204.171.32 54.204.171.32
+Nmap scan report for ec2-54-204-171-32.compute-1.amazonaws.com (54.204.171.32)
+Host is up (0.0072s latency).
+Not shown: 998 filtered tcp ports (no-response)
+PORT   STATE SERVICE VERSION
+53/tcp open  domain  dnsmasq 2.86
+| dns-nsid: 
+|_  bind.version: dnsmasq-2.86
+80/tcp open  http    Apache httpd 2.4.52 ((Ubuntu))
+|_http-title: Mega Big Tech
+| http-methods: 
+|_  Supported Methods: OPTIONS HEAD GET POST
+|_http-server-header: Apache/2.4.52 (Ubuntu)
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Aug  1 22:10:01 2024 -- 1 IP address (1 host up) scanned in 19.32 seconds
