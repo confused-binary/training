@@ -1,4 +1,6 @@
-1. Scanning provided IP address with NMAP to see what's up
+## Doing Things
+
+Scanning provided IP address with NMAP to see what's up
 
 ```
 nmap -v -sV -A -oA 54.204.171.32 54.204.171.32
@@ -159,7 +161,7 @@ We can also just ask the AWS cli for the region and it may be kind enough to tel
 aws s3api head-bucket --bucket mega-big-tech
 ```
 
-![alt text](image-13.png)
+    ![alt text](image-13.png)
 
 Checking the headers of the request to see if they include anything regarding the operational region. The format we saw before _https://mega-big-tech.s3.amazonaws.com/_ is the legacy format and kind of a thing from when S3 was mainly a global service and not this global-but-also-regional thing it's become over time. The newer formats for this include the region name in the URL, so can loop through all the regions and request the bucket listing until we get the result with the appropriate response. There are technically two formats and it's a bit brute-forcey, but it works. I don't think either format works better than the other but I include both in my script during assessments just in case. 
 
@@ -175,4 +177,4 @@ aws ec2 describe-regions | jq -r '.Regions[].RegionName' | while read region; do
 done
 ```
 
-![alt text](image-14.png)
+    ![alt text](image-14.png)
