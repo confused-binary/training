@@ -110,6 +110,10 @@ curl -k $(aws --profile pwnlabs_b2a s3 presign s3://dev.huge-logistics.com/admin
 
 But I'm off since my cat is yowling for food again. _again_ lol have fun hacking.
 
+p.s. Also, looks like that principal doesn't have `secretsmanager:List-Secrets` permissions. booo
+
+![alt text](image-17.png)
+
 ## Refrences
 1. [Tutorial: Configuring a static website on Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/HostingWebsiteOnS3Setup.html)
 2. [New-SECSecret Cmdlet](https://docs.aws.amazon.com/powershell/latest/reference/items/New-SECSecret.html)
